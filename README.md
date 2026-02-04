@@ -25,15 +25,27 @@ cp -r normans-skills/skills/content/* ~/.claude/skills/
 |-------|-------------|---------|
 | [x-content-optimizer](skills/content/x-content-optimizer/) | Audit and optimize tweets, X articles, and threads for X's recommendation algorithm | `/x-content-optimizer` |
 
+### Security
+
+| Skill | Description | Command |
+|-------|-------------|---------|
+| [audit-report-generator](skills/security/audit-report-generator/) | Generate professional PDF audit reports from markdown findings | `/audit-report-generator` |
+
 ## Structure
 
 ```
 normans-skills/
 ├── skills/
-│   └── content/
-│       └── x-content-optimizer/
+│   ├── content/
+│   │   └── x-content-optimizer/
+│   │       ├── SKILL.md
+│   │       └── references/
+│   └── security/
+│       └── audit-report-generator/
 │           ├── SKILL.md
-│           └── references/
+│           ├── assets/
+│           ├── references/
+│           └── scripts/
 └── README.md
 ```
 
