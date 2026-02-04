@@ -23,13 +23,13 @@ cp -r normans-skills/skills/content/* ~/.claude/skills/
 
 | Skill | Description | Install |
 |-------|-------------|---------|
-| [x-content-optimizer](skills/content/x-content-optimizer/) | Audit and optimize tweets, X articles, and threads for X's recommendation algorithm | `npx openskills install NewmanXBT/normans-skills/x-content-optimizer` |
+| [x-content-optimizer](skills/content/x-content-optimizer/) | Audit and optimize tweets, X articles, and threads for X's recommendation algorithm | `npx openskills install NewmanXBT/normans-skills/skills/content/x-content-optimizer` |
 
 ### Security
 
 | Skill | Description | Install |
 |-------|-------------|---------|
-| [audit-report-generator](skills/security/audit-report-generator/) | Generate professional PDF audit reports from markdown findings | `npx openskills install NewmanXBT/normans-skills/audit-report-generator` |
+| [audit-report-generator](skills/security/audit-report-generator/) | Generate professional PDF audit reports from markdown findings | `npx openskills install NewmanXBT/normans-skills/skills/security/audit-report-generator` |
 
 ## Structure
 
