@@ -9,6 +9,23 @@ description: Generate professional PDF audit reports from markdown findings. Use
 
 This skill transforms security audit findings written in markdown into professional PDF audit reports using pandoc and the eisvogel LaTeX template. It produces polished, publication-ready deliverables suitable for client delivery.
 
+## Pre-Ask Questions (Required)
+
+**IMPORTANT**: Before generating any report, you MUST ask the user these questions using AskUserQuestion tool:
+
+1. **Company/Firm Name**: What is your company or firm name?
+   - First time: Ask and save the answer as default for all future reports
+   - Subsequent reports: Use saved default, but allow user to override
+   - If no preference: "Independent Security Researcher"
+
+2. **Client/Protocol Name**: What is the name of the protocol being audited?
+   - Example: "Uniswap"
+
+3. **Report Title**: What should the report title be?
+   - Default: "[Protocol Name] Security Audit Report"
+
+Store the company name preference so it becomes the default option for future audit reports in this project.
+
 ## Prerequisites
 
 Before generating reports, ensure these dependencies are installed:
