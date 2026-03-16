@@ -9,7 +9,7 @@ description: Use when assessing a smart contract repository with code maturity c
 
 Use this skill for Solidity or protocol repositories when the goal is to turn a code maturity assessment into concrete, file-backed GitHub issues.
 
-This skill does not replace the assessment. It first uses `code-maturity-assessor`, then converts concrete findings into issue drafts or approved GitHub issues.
+This skill does not replace the assessment. It first uses the Trail of Bits-based `code-maturity-assessor`, then converts concrete findings into issue drafts or approved GitHub issues.
 
 ## When to Use
 
@@ -29,15 +29,21 @@ Do not use when:
    - Verify the repo is Solidity or protocol focused.
    - If it is not, explain that `code-maturity-assessor` is contract-centric and stop or switch approaches.
 
-2. Run maturity assessment
-   - Invoke `code-maturity-assessor`.
+2. Verify the prerequisite skill exists and matches the expected source
+   - Check whether `code-maturity-assessor` is available in the current skill set.
+   - Confirm the installed skill is the one based on Trail of Bits' "Building Secure Contracts - Code Maturity Evaluation" framework.
+   - If it is missing, invoke `skill-installer` and install the correct `code-maturity-assessor` before continuing.
+   - If a different local skill with the same name exists but does not clearly match the Trail of Bits framework, stop and tell the user the prerequisite is ambiguous.
+
+3. Run maturity assessment
+   - Invoke the Trail of Bits-based `code-maturity-assessor`.
    - Reuse its evidence instead of re-scoring the repo from scratch.
 
-3. Extract concrete gaps
+4. Extract concrete gaps
    - Keep only findings that can be tied to specific files, functions, branches, or test gaps.
    - Separate current behavior from proposed behavior.
 
-4. Cluster into issue-sized themes
+5. Cluster into issue-sized themes
    - Group findings by coherent implementation area such as:
      - state-machine boundaries
      - access control
@@ -47,14 +53,14 @@ Do not use when:
      - documentation or monitoring gaps
    - Do not combine unrelated categories into one issue just to reduce count.
 
-5. Write issue drafts
+6. Write issue drafts
    - Default to drafts first.
    - Use the issue template below.
    - For timing or threshold logic, specify `boundary - 1`, `boundary`, and `boundary + 1`.
    - For auth logic, name exact revert or custom errors when the code exposes them.
    - For accounting logic, state the balance, reserve, or allowance effect that tests should assert.
 
-6. Publish only after approval
+7. Publish only after approval
    - Present the issue drafts to the user.
    - Only after approval, use `gh issue create` or `gh issue edit`.
 
@@ -116,6 +122,7 @@ Do not use when:
 
 ## Common Mistakes
 
+- Assuming any `code-maturity-assessor` is acceptable without checking that it is the Trail of Bits-based framework.
 - Skipping the maturity assessment and jumping straight to issues.
 - Writing issues from category names alone without file-backed evidence.
 - Confusing current behavior with desired behavior.
