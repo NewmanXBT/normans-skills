@@ -30,6 +30,7 @@ cp -r normans-skills/skills/content/* ~/.claude/skills/
 | Skill | Description | Install |
 |-------|-------------|---------|
 | [audit-report-generator](skills/security/audit-report-generator/) | Generate professional PDF audit reports from markdown findings | `npx openskills install NewmanXBT/normans-skills/skills/security/audit-report-generator` |
+| [contract-maturity-issue-writer](skills/security/contract-maturity-issue-writer/) | Turn smart contract code maturity findings into structured GitHub issues with file paths, code locations, and acceptance criteria | `npx openskills install NewmanXBT/normans-skills/skills/security/contract-maturity-issue-writer` |
 
 ## Structure
 
@@ -46,6 +47,8 @@ normans-skills/
 │           ├── assets/
 │           ├── references/
 │           └── scripts/
+│       └── contract-maturity-issue-writer/
+│           └── SKILL.md
 └── README.md
 ```
 
